@@ -17,6 +17,10 @@ Para el ejemplo, solamente instalar un servidor y algun editor para correr los s
 Y para los scripts use workbench. Se instala como cualquier producto windows, el servidor gratuito y el workbench. 
 Por supuesto, cualquier base de datos relacional la pueden usar, la diferencia va a ser el connection string. 
 
+**INSTALAR CONNECTOR/NET**
+Es necesario instalar este componente. Ver requisitos para conectar EF6 con MySQL
+https://dev.mysql.com/doc/connector-net/en/connector-net-entityframework60.html#connector-net-ef6-config 
+
 
 ## Creación de la base de datos
 La base de datos de ejemplo usada en éste proyecto es muuuy simple. Solamente son "items" con un Id, Nombre y Descripcion.
@@ -119,9 +123,9 @@ El ejemplo no tiene proyecto de logica de negocios, etc. Generalmente, el acceso
 
 **Errores encontrados**
 
-Al parecer, el conector de oracle para mysql da un error extraño de seguridad que solo se resuelve usando una version mas antigua en nuget. Revisar lo que está en packages.config en cada proyecto.Las versiones que funcionan parecen ser:
-  ```
-  <package id="MySql.Data" version="6.9.12" targetFramework="net461" />
-  <package id="MySql.Data.Entity" version="6.8.8" targetFramework="net461" />
-  ```
+Al parecer, el conector de oracle para mysql da un error extraño de seguridad que solo se resuelve usando una version mas antigua en nuget. Revisar lo que está en packages.config en cada proyecto. Yo termine installando mysql connector 6.9.12 (https://dev.mysql.com/downloads/file/?id=478117). Y las versiones de los packetes son 6.9.11. 
+Tomar en cuenta que pueden solo modificar el proyecto existente.
+El conector parece no ser gran cosa porque si las versiones no calzan no funciona bien con EF. 
+
+
 
